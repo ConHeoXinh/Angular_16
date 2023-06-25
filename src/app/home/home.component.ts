@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   public name = 'Long';
+  public age = 15;
 
-  constructor(){
-    
+  constructor() {
+
+  }
+
+  public resetName(): void {
+    console.log('resetName');
+    this.name = '';
   }
 }

@@ -3,6 +3,16 @@
     Day la component home
   </h1>
   <p>Them hang thu 2 trong home</p>
-  <h2>Chao ban {{name}}
-  </h2>
+  <h2>Chao ban {{name}}</h2>
+  <input value="10" />
+  <br />
+  <input [value]="name" title="Day la name" />
+  <br />
+  <input [value]="name" [title]="'Day la '+ name" />
+  <br />
+  <input type="text" [(ngModel)]="name" />
+  <h2 *ngIf="age > 18">Ban da gia roi</h2>
+  <h2 *ngIf="age <= 18">ban van con tre</h2>
+
+  <button (click)="resetName()">Rest name</button>
 </div>
