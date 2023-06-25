@@ -11,8 +11,42 @@
   <input [value]="name" [title]="'Day la '+ name" />
   <br />
   <input type="text" [(ngModel)]="name" />
-  <h2 *ngIf="age > 18">Ban da gia roi</h2>
-  <h2 *ngIf="age <= 18">ban van con tre</h2>
-
+  <!-- <h2 *ngIf="age > 18">Ban da gia roi</h2>
+  <h2 *ngIf="age <= 18">ban van con tre</h2> -->
   <button (click)="resetName()">Rest name</button>
+  <br />
+  <br />
+  <input type="text" [(ngModel)]="age" />
+  <h2>Tuoi ban {{age}}</h2>
+  <div *ngIf="age <= 18; then tre; else gia"></div>
+  <ng-template #gia>
+    <h2>Ban da gia roi</h2>
+  </ng-template>
+  <ng-template #tre>
+    <h2>ban van con tre</h2>
+  </ng-template>
+
+  <br />
+  <br />
+  <h3>Day la component trai cay</h3>
+  <div *ngFor="let trai of traiCay; let i=index">
+    <ul>
+      <li>{{i + 1}}.{{trai}}</li>
+    </ul>
+  </div>
+
+  <br />
+  <br />
+  <table class="table">
+    <tr>
+      <th>Thu tu</th>
+      <th>Ten</th>
+      <th>Gia</th>
+    </tr>
+    <tr *ngFor="let trai of traiCay2; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{trai.ten}}</td>
+      <td><span [ngClass]="{'so-am': trai.gia < 15}">{{trai.gia}}</span></td>
+    </tr>
+  </table>
 </div>
