@@ -49,4 +49,37 @@
       <td><span [ngClass]="{'so-am': trai.gia < 15}">{{trai.gia}}</span></td>
     </tr>
   </table>
+
+  <br />
+  <br />
+  <table class="table">
+    <tr>
+      <th>Thu tu</th>
+      <th>Ten</th>
+      <th>Gia</th>
+      <th>Ha Gia</th>
+    </tr>
+    <tr *ngFor="let trai of traiCay2; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{trai.ten | lowercase}}</td>
+      <td>{{trai.gia | currency : "VND":"symbol":"1.2" }}</td>
+      <td>
+        <!-- <span *ngIf="trai.hagia">{{trai.gia | onSale}}</span> -->
+        <span>{{trai.hagia | onSale | uppercase}}</span>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+  <h1>cascade</h1>
+  <label for="cars">Choose a city:</label>
+  Tinh
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let data of vietnamData" value="{{data.city}}">{{data.city}}</option>
+  </select>
+  Huyen
+  <select id="district">
+    <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
+  </select>
 </div>
