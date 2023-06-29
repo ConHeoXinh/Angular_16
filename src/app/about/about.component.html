@@ -1,6 +1,6 @@
-<p appHighLight style="font-size: 24px;" >about works!</p>
-<p [appHighLight]="myColor" >about works!</p>
-<p [appHighLight]="'orange'" >about works!</p>
+<p appHighLight style="font-size: 24px;">about works!</p>
+<p [appHighLight]="myColor">about works!</p>
+<p [appHighLight]="'orange'">about works!</p>
 <ul [ngSwitch]="loginName">
   <li *ngSwitchCase="'user'">
     <p>User is logged in..</p>
@@ -13,3 +13,6 @@
     <p>Please choose login name</p>
   </li>
 </ul>
+<span>Counter - {{counter}}</span>
+<br>
+<span>Counter^2 - {{counterBinhPhuong}}</span>
