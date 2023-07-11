@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommonService {
   public counter = 0;
 
-  constructor() { }
+  constructor() {}
 
   public binhPhuong(n: number): number {
-
     return n * n;
   }
 
@@ -19,5 +18,9 @@ export class CommonService {
 
   public setCounter(n: number): void {
     this.counter = n;
+  }
+
+  public submitData(data: any): void {
+    console.log('gui data len server. Data: ', data);
   }
 }
